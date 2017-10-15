@@ -61,9 +61,9 @@ application = DjangoWhiteNoise(application)
 """
 import os
 import sys
-#path = '/home/pdtri/myproject'
-#if path not in sys.path:
-# sys.path.append(path)
+path = '/home/pdtri/myproject'
+if path not in sys.path:
+ sys.path.append(path)
  
 os.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'
  

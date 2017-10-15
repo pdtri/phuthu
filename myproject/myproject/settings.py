@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'apps.chuyenthue',
     'gunicorn',
     'django_tables2',
+    'psycopg2',
+    'whitenoise',
 ]
 
 MIDDLEWARE = [
