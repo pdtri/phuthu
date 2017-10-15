@@ -31,13 +31,14 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 #from django.contrib.staticfiles.handlers import StaticFilesHandler
 #application = StaticFilesHandler(get_wsgi_application())
 #-------
+"""
 import os
 import sys
-"""
+
 import signal
 import traceback
 import time
-"""
+
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
@@ -46,5 +47,14 @@ path = u'/home/pdtri/myproject'
 if path not in sys.path:
     sys.path.append(path)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
+"""
+import os
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
+
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
