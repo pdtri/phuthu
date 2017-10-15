@@ -1,0 +1,1 @@
+var my_app = angular.module('myApp', [/* other dependencies */, 'djng.forms']);
