@@ -1,3 +1,6 @@
+django-ajaxice
+django-pagination
+django-tastypie
 coverage
 nose
 django-debug-toolbar
