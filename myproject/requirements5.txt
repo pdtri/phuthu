@@ -1,3 +1,4 @@
+gunicorn==19.7.1
 amqp==2.1.4
 appdirs==1.4.3
 asn1crypto==0.22.0
@@ -32,7 +33,6 @@ django-toolbelt==0.0.1
 djangorestframework==3.6.4
 Flask==0.12.2
 flower==0.9.1
-gunicorn==19.7.1
 idna==2.5
 itsdangerous==0.24
 Jinja2==2.9.6
@@ -41,7 +41,6 @@ lazy-object-proxy==1.2.2
 lxml==3.7.3
 MarkupSafe==1.0
 microsofttranslator==0.8
-numpy==1.13.3
 olefile==0.44
 packaging==16.8
 Pillow==4.0.0
@@ -62,3 +61,4 @@ virtualenvwrapper-win==1.2.2
 Werkzeug==0.12.2
 whitenoise==3.3.0
 wrapt==1.10.10
+

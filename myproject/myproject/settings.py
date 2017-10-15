@@ -13,8 +13,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -101,12 +102,12 @@ DATABASES = {
         },
 	   'NAME': 'qldd',
        'USER': 'postgres',
-       'PASSWORD': 'lumia430',
+       'PASSWORD': 'l430',
        'HOST': '127.0.0.1',
        'PORT': '5432',
     }
 }
-"""
+
 """
 
 DATABASES = {
@@ -115,10 +116,10 @@ DATABASES = {
 	   'OPTIONS': {
             'options': '-c search_path=qldd,public'
         },
-	   'NAME': 'd3u8ape305as73',
-       'USER': '',
-       'PASSWORD': '',
-       'HOST': 'ec2-54-225-237-64.compute-1.amazonaws.com',
+	   'NAME': 'dcvhkkp4pdi7r7',
+       'USER': 'cmqvybpzazahyq',
+       'PASSWORD': '4b71fdd7a957ce4768bb7378fb691f798b4ec12fe1a1982b92adb2c5b14674fe',
+       'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
        'PORT': '5432',
     }
 }
@@ -130,7 +131,7 @@ DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['OPTIONS'] = {
     'options': '-c search_path=qldd,public'
 }
-
+"""
 #DATABASE_URL = 'postgresql:///qldd'
 #DATABASE_URL='heroku pg:psql postgresql-tapered-28118 --app phuthu '
 #heroku pg:psql postgresql-tapered-28118 --app phuthu
