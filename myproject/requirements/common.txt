@@ -1,3 +1,5 @@
+django-debug-toolbar
+coverage, nose
 django-pagination 
 django-tastypie
 amqp
