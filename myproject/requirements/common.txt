@@ -1,5 +1,5 @@
-django-pagination, 
-django-tastypie,
+django-pagination 
+django-tastypie
 amqp==2.1.4
 appdirs==1.4.3
 asn1crypto==0.22.0
