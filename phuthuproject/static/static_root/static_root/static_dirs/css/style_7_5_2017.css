@@ -1,0 +1,19 @@
+/*
+huong dan 
+*{margin:0px;padding:0px;}
+.clear {clear:both;}
+*/
+*{margin:0px;padding:0px;}
+li {list-style:none;}
+a {text-decoration:none;color:#FFF;font-size:16px;}
+.clear {clear:both;}
+.wrapper{width:960px;height:500px;background:#F8F8F8;margin:0px auto;}
+.main_menu {background: #00A96B;margin-top:30px;}
+.main_menu>ul>li {list-style:none;float:left;padding:11px 27px;position:relative;border-right:1px dotted #ACACAC;}
+.main_menu>ul>li:last-child{border-right:none;}
+.main_menu>ul>li>a{text-decoration:none;color:#FFF;font-size:17px;}
+.main_menu>ul>li>ul { display:none;position:absolute;background:#00A96B;top:43px;left:0px;width:200px;}
+.main_menu>ul>li:hover ul{ display: block;}
+.main_menu ul li:hover{ background: #5f5c5c;transition: all 0.25s;}
+.main_menu>ul>li>ul>li{ padding:5px;10px;}
+.main_menu>ul>li>ul>li { border-bottom: 1px dotted #ACACAC;}
