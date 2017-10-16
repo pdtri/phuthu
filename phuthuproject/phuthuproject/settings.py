@@ -26,7 +26,7 @@ SECRET_KEY = '_8v&wu+zi(7ae@f^ue+i4m7!_#wbtz$+g8&zt!h6q#y0e)mu_%'
 DEBUG = True
 
 ALLOWED_HOSTS = ['phuthu.herokuapp.com']
-
+#'phuthu.herokuapp.com'
 # Application definition
 
 INSTALLED_APPS = [
@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'phuthuproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -80,6 +80,44 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'OPTIONS': {
+            'options': '-c search_path=public'
+        },
+	   'NAME': 'qldd',
+       'USER': 'postgres',
+       'PASSWORD': 'l430',
+       'HOST': '127.0.0.1',
+       'PORT': '5432',
+    }
+}
+
+"""
+
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	   'OPTIONS': {
+            'options': '-c search_path=qldd,public'
+        },
+	   'NAME': 'dcvhkkp4pdi7r7',
+       'USER': 'cmqvybpzazahyq',
+       'PASSWORD': '4b71fdd7a957ce4768bb7378fb691f798b4ec12fe1a1982b92adb2c5b14674fe',
+       'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
+       'PORT': '5432',
+    }
+}
+
+"""
+
+DATABASES = {'default': dj_database_url.config()}
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+DATABASES['default']['OPTIONS'] = {
+    'options': '-c search_path=qldd,public'
+}
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
