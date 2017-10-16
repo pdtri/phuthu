@@ -1,0 +1,59 @@
+
+{% extends "main.html" %}
+{% load render_table from django_tables2 %}
+{% load staticfiles %}
+<!doctype html>
+{% block content %}
+<html>
+    <head>
+        <!--link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" /-->	
+		<link href="{% static 'css/timkiem.css' %}" rel="stylesheet" media="screen"/>
+		 <link href="{% static 'css/forms.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/screen.css' %}" rel="stylesheet" media="screen"/>
+	     <meta http-equiv= "Content-type" content="text/html"; charset="UTF-8">
+    	<script language="javascript" src="{% static  "djng/js/angular.min.js" %}"> </script>
+        <script language="javascript" src="{% static  "djng/app_congtac.js" %}"></script>
+    </head>
+      <body ng-app="myApp">
+      {$ 1 + 2 $}
+           <form action="" ng-controller = "timCtrl"
+
+              method="post" name="form">{% csrf_token %}
+              <div class="f_tim">
+                      <label for = "id_ten"> ten </label>
+                       <input type ="text" cols="100" id="id_ten" name ="ten" rows="50" ng-model="congtac.ten"></input>
+                 <span class="btn_tim">
+                       <button class="lb_btn_tim" ng-click="submit($event)"> tim kiem </button>
+                 </span>
+              
+               </div><!-- /input-group -->
+              
+           </form>
+      </body>
+</html>
+{% endblock %}
+ <!--
+<div class="row clearfix">
+<div class="col-md-6 col-md-offset-3 column">
+<form id="search-form" action="" method='POST'>
+    {% csrf_token %}
+    <div class="input-group input-group-sm">
+       {{ form.non_field_errors }}
+       {{ form.hovaten.errors }}
+       {{ form}}
+    <span class="input-group-btn">
+    <button class="btn btn-search"
+    type="submit">search</button>
+    </span>
+    </div><!-- /input-group -->
+	<!--
+</form>
+</div>
+<div class="col-md-12 column tweets">
+</div>
+</div>
+
+{% block js %}
+ <script src="{% static 'static/admin/js/search.js' %}"></script>
+{% endblock %}
+-->
