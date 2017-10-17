@@ -157,10 +157,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'live-static','static-root') # chu y load css
+STATIC_ROOT = os.path.join(BASE_DIR,'live-static') # chu y load css
 
 STATICFILES_DIRS=(
-                  os.path.join(BASE_DIR,'static','static-root'),
+                  os.path.join(BASE_DIR,'static'),
 				  #/Users/ADMIN/OneDrive/hoclamweb/django/qldd/qldd/static/static_root/,
 )
 
