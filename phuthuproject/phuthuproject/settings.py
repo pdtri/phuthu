@@ -97,7 +97,7 @@ DATABASES = {
 }
 
 """
-
+"""
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -105,8 +105,8 @@ DATABASES = {
             'options': '-c search_path=qldd,public'
         },
 	   'NAME': 'dcvhkkp4pdi7r7',
-       'USER': 'cmqvybpzazahyq',
-       'PASSWORD': '4b71fdd7a957ce4768bb7378fb691f798b4ec12fe1a1982b92adb2c5b14674fe',
+       'USER': '',
+       'PASSWORD': '',
        'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
        'PORT': '5432',
     }
@@ -119,7 +119,6 @@ DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['OPTIONS'] = {
     'options': '-c search_path=qldd,public'
 }
-"""
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -163,10 +162,6 @@ STATICFILES_DIRS=(
                   os.path.join(BASE_DIR,'static'),
 				  #/Users/ADMIN/OneDrive/hoclamweb/django/qldd/qldd/static/static_root/,
 )
-
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"live-static","media-root")
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
