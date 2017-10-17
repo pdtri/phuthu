@@ -1,0 +1,83 @@
+
+
+
+
+	
+
+<div class="wrapper">
+  
+	    <head class="insidehead">
+		    <h2>Contact</h2>
+			<div> <a href ="index.php#top "><img scr = "images/j29logo-brown100.png" alt="j29 logo"/></a></div>
+			
+			<!--link href="{% 'j29_form.css' %}" rel="stylesheet" media="screen"-->
+            <link rel="stylesheet" href='j29_css.css'type="text/css" />
+		    <meta http-equiv= "Content-type" content="text/html"; charset="UTF-8">
+		</head>	
+		<!--create your form -->
+		<div id = "myform"><!--/* myform */ -->
+		    <!--form name ="contactform" id="contactform" action="" method="post"-->
+			    <div class ="form_item form_col1">
+				    <label for="fname">first name</label> 
+					<div>
+					    <input name="fname" id="fname" type ="text" value="">
+					</div>
+				</div>
+				<div class ="form_item form_col2">
+				    <label for="lname">last name </label>
+					<div>
+					   <input name="lname" id="lname" type="text" value="">
+					</div>
+				</div><!--/* end form_col2 */ -->
+				<div class="form_item form_col1">
+				    <label for ="thisemail">email</label>
+					<div>
+					    <input name="thisemail" id="thisemail" type="email" value="">
+					</div>
+				</div><!--/* end form_col1 */ -->
+				<div class="form_item form_col2">
+				    <label for ="phone">phone</label>
+					<div>
+					    <input name="phone" id="phone" type="tel" value="">
+					</div>
+				</div><!--/* end form_col2 */ -->
+				<div class="form_item">
+				    <label for="message">message</label>
+					<div>
+					    <textarea id ="message" name="message" value=""></textarea>
+					</div>
+				</div> <!--/* end form_item*/ -->
+				<div class="form_item form_col1 checks">
+				     <fieldset>
+				         <legend> please mark what you're interested in.</legend>
+					     <label><input type="checkbox" name="interests" value ="print"/> print design</label>
+					     <label><input type="checkbox" name="interests" value ="webDesign"/> web Design</label>
+					     <label><input type="checkbox" name="interests" value ="photography"/>photography </label>
+					     <label><input type="checkbox" name="interests" value ="development"/> Web Development</label>
+				     </fieldset>
+				</div> <!--/* end form_col1_checks */ -->
+				<div class="form_item form_col2"> 
+				    <label for="time">best time to reach you </label>
+					<select id="time">
+					    <option value=""></option> 
+						<option value="morning"Morning></option> 
+						<option value="afternoon"afternoon></option> 
+						<option value="evening">Evening</option> 
+						<option value="whenever"Whenever></option> 
+					</select>
+				</div><!--/* end form_col2 */ -->
+				<div class="form_item"><input type="submit" name="sendmessage" class="myButton"></div>
+			<!--/form-->
+		
+		    
+		</div><!--/* endmyform */ -->
+		<!-- make an aside with calss=myinfo and put each line in a separate paragraph-->
+		<aside class ="myinfo">
+		    <div>cathy benscoter </div>
+			<div><a href="mailto:cathy@j29desgns.com">cathy@j29desgns.com</a></div>
+			<div>412.974.5771</div>
+		</aside>
+		<article class ="back2top"><a href ="#top">top</a></article>
+	
+</div>	<!--/* wapper */ -->
+
