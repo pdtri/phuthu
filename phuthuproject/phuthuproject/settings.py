@@ -160,11 +160,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static','static_dirs') # chu y load css
 
-#STATICFILES_DIRS=(
-#                  os.path.join(BASE_DIR,'static','static_root'),
+STATICFILES_DIRS=(
+                  os.path.join(BASE_DIR,'static','static_root'),
 				  #/Users/ADMIN/OneDrive/hoclamweb/django/qldd/qldd/static/static_root/,
-#)
-STATICFILES_DIRS=(BASE_DIR.child('static'),)
+)
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"live-static","media-root")
