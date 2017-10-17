@@ -160,7 +160,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'live-static','static-root') # chu y load css
 
 STATICFILES_DIRS=(
-                  os.path.join(BASE_DIR,'static','static-root'),
+                  os.path.join(BASE_DIR,'static'),
 				  #/Users/ADMIN/OneDrive/hoclamweb/django/qldd/qldd/static/static_root/,
 )
 
