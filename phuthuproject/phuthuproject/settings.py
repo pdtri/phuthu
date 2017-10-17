@@ -25,7 +25,7 @@ SECRET_KEY = '_8v&wu+zi(7ae@f^ue+i4m7!_#wbtz$+g8&zt!h6q#y0e)mu_%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['phuthu.herokuapp.com']
+ALLOWED_HOSTS = []
 #'phuthu.herokuapp.com'
 # Application definition
 
@@ -157,7 +157,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static','static_dirs') # chu y load css
+STATIC_ROOT = os.path.join(BASE_DIR,'live-static','static_root') # chu y load css
 
 STATICFILES_DIRS=(
                   os.path.join(BASE_DIR,'static','static_root'),
