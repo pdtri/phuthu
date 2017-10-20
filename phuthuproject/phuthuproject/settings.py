@@ -119,7 +119,7 @@ DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['OPTIONS'] = {
     'options': '-c search_path=qldd,public'
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
