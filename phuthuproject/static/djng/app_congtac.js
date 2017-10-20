@@ -14,7 +14,7 @@ myApp.controller("nhapCtrl", ['$scope', '$http', '$cookies',
         $event.preventDefault();
         // Send the data.
         var in_data = jQuery.param({'ten': $scope.congtac.ten, 'diachi': $scope.congtac.diachi,'congtac': $scope.congtac.congtac, 'csrfmiddlewaretoken': $cookies.csrftoken});
-        $http.post('/add', in_data)
+        $http.post('/tim_congtac/', in_data)
             success(function(out_data) {
             // Reset the form in case of success.
             alert("thanh cong");

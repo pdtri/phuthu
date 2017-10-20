@@ -74,12 +74,12 @@ class tim_congtac(View):
                  #try:
                        
                     #hovaten = form.cleaned_data['hovaten']
-                     
+                    dk_ten = request.POST.get('ten')
                      #dk = TPc.objects.filter(hovaten__icontains = hovaten)
                      #context = Context({"TPc": hovaten, "dk": dk })
                      #return render(request, 'chuyenthue/nhap/_tweet_search.html',   context)
-                    #dk = CongtacTable(Congtac.objects.filter(ten__icontains = hovaten))
-                    dk = CongtacTable(Congtac.objects.all())
+                    dk = CongtacTable(Congtac.objects.filter(ten__icontains = dk_ten))
+                    #dk = CongtacTable(Congtac.objects.all())
                     #table=PersonTable(dk)
                     RequestConfig(request).configure(dk) 
                     return render(request, 'ketqua_tim_congtac.html', {'table_ketqua': dk})

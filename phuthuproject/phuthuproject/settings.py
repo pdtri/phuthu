@@ -105,21 +105,21 @@ DATABASES = {
             'options': '-c search_path=qldd,public'
         },
 	   'NAME': 'dcvhkkp4pdi7r7',
-       'USER': '',
+       'USER': 'cmqvybpzazahyq',
        'PASSWORD': '',
        'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
        'PORT': '5432',
     }
 }
-
 """
+
 
 DATABASES = {'default': dj_database_url.config()}
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 DATABASES['default']['OPTIONS'] = {
     'options': '-c search_path=qldd,public'
 }
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
