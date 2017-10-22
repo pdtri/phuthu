@@ -23,7 +23,8 @@ from .tables import CongtacTable
 from django_tables2 import RequestConfig
 #
 import json
-
+def thu(request):
+    return render(request, 'thu.html')
 def add_congtac(request):
     saved = False
     if request.method == 'POST':
@@ -43,25 +44,27 @@ def add_congtac(request):
 class tim_congtac(View):
     """Search all tweets with query /search/?query=<query> URL"""
     def get(self, request):
-        try:
+        #try:
             #selected_item = TPc.objects.all()
             #form = f_tpc_nhap(data=selected_item)
-            form = SearchForm()
+            #form = SearchForm()
             #form = data['hovaten']
             #form = TPc.objects.filter("hovaten")
             #TPc.__dict__['hovaten']['diachi']
             #form = TPc.fields['hovaten']
 			#myForm.fields['description']
-        except Congtac.DoesNotExist:
-            raise Http404("get bi loi")
+        #except Congtac.DoesNotExist:
+        #    raise Http404("get bi loi")
        #
         #form = f_tpc_nhap()
         #params = dict()
-        params={}
-        params['query'] = None
-        params["form"] = form
-        return render(request, 'tim_congtac.html', params)
-
+        #params={}
+        #params['query'] = None
+        #params["form"] = form
+        #return render(request, 'tim_congtac.html', params)
+        #dk = CongtacTable(Congtac.objects.filter(ten__icontains= "null"))
+        dk = CongtacTable(Congtac.objects.all())
+        return render(request, 'tim_congtac.html', {'table_ketqua': dk})
     def post(self, request):
         if request.method == 'POST':
                 #form = f_tpc_nhap(request.POST)
@@ -82,7 +85,7 @@ class tim_congtac(View):
                     #dk = CongtacTable(Congtac.objects.all())
                     #table=PersonTable(dk)
                     RequestConfig(request).configure(dk) 
-                    return render(request, 'ketqua_tim_congtac.html', {'table_ketqua': dk})
+                    return render(request, 'tim_congtac.html', {'table_ketqua': dk})
 					 
                      #return HttpResponse( 'chuyenthue/nhap/_tweet_search.html', context)
                      #return HttpResponse(json.dumps(return_str),content_type="application/json")
@@ -94,4 +97,5 @@ class tim_congtac(View):
             #     return HttpResponse(loi)
                  #HttpResponseRedirect("/search")
         else:
-                HttpResponseRedirect("tim_congtac.html")
+                #dk = CongtacTable(Congtac.objects.all())
+                HttpResponseRedirect("tim_congtac.html" )
