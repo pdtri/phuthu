@@ -14,7 +14,7 @@ myApp.controller("nhapCtrl", ['$scope', '$http', '$cookies',
         $event.preventDefault();
         // Send the data.
         var in_data = jQuery.param({'ten': $scope.congtac.ten, 'diachi': $scope.congtac.diachi,'congtac': $scope.congtac.congtac, 'csrfmiddlewaretoken': $cookies.csrftoken});
-        $http.post('/tim_congtac', in_data)
+        $http.post('/thu', in_data)
             success(function(out_data) {
             // Reset the form in case of success.
             alert("thanh cong");
@@ -96,3 +96,17 @@ myApp.controller("PanelController",
               //het fun
               });// het control
 
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}

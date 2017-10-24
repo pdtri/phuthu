@@ -23,8 +23,7 @@ from .tables import CongtacTable
 from django_tables2 import RequestConfig
 #
 import json
-def thu(request):
-    return render(request, 'thu.html')
+
 def add_congtac(request):
     saved = False
     if request.method == 'POST':
@@ -84,7 +83,7 @@ class tim_congtac(View):
                     dk = CongtacTable(Congtac.objects.filter(ten__icontains = dk_ten))
                     #dk = CongtacTable(Congtac.objects.all())
                     #table=PersonTable(dk)
-                    RequestConfig(request).configure(dk) 
+                    RequestConfig(request).configure(dk)
                     return render(request, 'tim_congtac.html', {'table_ketqua': dk})
 					 
                      #return HttpResponse( 'chuyenthue/nhap/_tweet_search.html', context)
@@ -99,3 +98,27 @@ class tim_congtac(View):
         else:
                 #dk = CongtacTable(Congtac.objects.all())
                 HttpResponseRedirect("tim_congtac.html" )
+
+
+class thu(View):
+    """Search all tweets with query /search/?query=<query> URL"""
+
+    def get(self, request):
+
+        dk = CongtacTable(Congtac.objects.all())
+        return render(request, 'thu.html', {'table_ketqua': dk})
+
+    def post(self, request):
+        if request.method == 'POST':
+
+            form = SearchForm(request.POST)  # or None)
+
+            dk_ten = request.POST.get('ten')
+
+            dk = CongtacTable(Congtac.objects.filter(ten__icontains=dk_ten))
+            # dk = CongtacTable(Congtac.objects.all())
+            # table=PersonTable(dk)
+            RequestConfig(request).configure(dk)
+            return render(request, 'thu.html', {'table_ketqua': dk})
+        else:
+            HttpResponseRedirect("thu.html")

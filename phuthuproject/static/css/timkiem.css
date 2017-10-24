@@ -4,7 +4,7 @@
 
 body { 
 margin:fluid 30px 40px 50px;
-border:1px solid #FF0000
+border:1px solid #ccc
 }		
 	h1,h2,h3 {font-family:arial,verdana,serif}
 	.btn_tim, input[type=submit], input[type=button], .submit-row input, a.button {
