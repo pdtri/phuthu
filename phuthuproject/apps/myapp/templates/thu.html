@@ -1,9 +1,12 @@
 {% load render_table from django_tables2 %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-         <link href="{% static 'css/timkiem.css' %}" rel="stylesheet" media="screen"/>
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ví dụ Tabs trong AngularJS - Freetuts.net</title>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+          <link href="{% static 'css/timkiem.css' %}" rel="stylesheet" media="screen"/>
 		 <link href="{% static 'css/forms.css' %}" rel="stylesheet" media="screen">
          <link href="{% static 'css/screen.css' %}" rel="stylesheet" media="screen"/>
          <link href="{% static 'css/thu.css' %}" rel="stylesheet" media="screen"/>
@@ -12,52 +15,71 @@
         <script language="javascript" src="{% static  "djng/js/angular.min.js" %}"> </script>
 
         <script language="javascript" src="{% static  "djng/thu.js" %}"></script>
-
-
-</head>
-<body ng-app="myApp">
-
-<h3>Fade in Tabs</h3>
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<div id="London" class="tabcontent" >
-  <h3>thêm</h3>
-  <p>London is the capital city of England.</p>
-       {$ 1 + 2 $}
-           <form action="" ng-controller = "timCtrl"
-
-              method="post" name="form">{% csrf_token %}
-              <div class="f_tim">
+		
+		<style>
+            *{margin:0;padding:0}
+            body{margin:20px;}
+            .tabs-heading{
+                padding: 20px 20px 0px 20px;
+                height: 30px;
+                border: solid 1px gray;
+                border-radius: 5px 5px 0px 0px;
+                background-color: #cae8fd;
+            }
+            .tabs-heading a{
+                display: inline-block;
+                padding: 0px 20px;
+                height: 30px;
+                line-height: 30px;
+                z-index: 1;
+                color: blue;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .tabs-heading a.active{
+                height: 30px;
+                border: solid 1px gray;
+                border-bottom: none;
+                background-color: #FFF;
+            }
+            .tabs-content{
+                border: solid 1px gray;
+                border-top: none;
+                min-height: 200px;
+                padding: 10px;
+            }
+             
+        </style>
+    </head>
+    <body ng-app="myApp" ng-controller="TabController">
+        <div class="tabs-heading">
+            <a href="#" ng-class="{active:isActiveTab(1)}" ng-click="changeTab(1)">Tab 1</a>
+            <a href="#" ng-class="{active:isActiveTab(2)}" ng-click="changeTab(2)">Tab 2</a>
+            <a href="#" ng-class="{active:isActiveTab(3)}" ng-click="changeTab(3)">Tab 3</a>
+        </div>
+        <div class="tabs-content"  >
+            <div ng-show="current_tab == 1" >
+                <h1>Nội dung của tab 1</h1>
+				 {$ 1 + 2 $}
+              <form action=""  method="post" name="form">
+			     {% csrf_token %}
+                 <div class="f_tim" >
                       <label for = "id_ten"> ten </label>
                        <input type ="text" cols="100" id="id_ten" name ="ten" rows="50" ng-model="congtac.ten"></input>
                  <span class="btn_tim">
                        <button class="lb_btn_tim" ng-click="submit($event)"> tim kiem </button>
                  </span>
-              </div><!-- /input-group -->
-
-           </form>
-
-		<!--ket qua-->
-         {% render_table table_ketqua %}
-        <!--het ket qua-->
-</div> <!-- het them -->
-
-<div id="Paris" class="tabcontent">
-  <h3>tim</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>cap nhat</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-
-
-</body>
+                 </div><!-- /input-group -->
+              </form>
+          
+				{% render_table table_ketqua %}
+            </div>
+            <div ng-show="current_tab == 2">
+                <h1>Nội dung của tab 2</h1>
+            </div>
+            <div  ng-show="current_tab == 3">
+                <h1>Nội dung của tab 3</h1>
+            </div>
+        </div>
+    </body>
 </html>

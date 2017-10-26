@@ -1,0 +1,64 @@
+{% load render_table from django_tables2 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+         <link href="{% static 'css/timkiem.css' %}" rel="stylesheet" media="screen"/>
+		 <link href="{% static 'css/forms.css' %}" rel="stylesheet" media="screen">
+         <link href="{% static 'css/screen.css' %}" rel="stylesheet" media="screen"/>
+         <link href="{% static 'css/thu.css' %}" rel="stylesheet" media="screen"/>
+	     <meta http-equiv= "Content-type" content="text/html"; charset="UTF-8">
+
+        <script language="javascript" src="{% static  "djng/js/angular.min.js" %}"> </script>
+
+        <script language="javascript" src="{% static  "djng/thu.js" %}"></script>
+
+
+</head>
+<body ng-app="myApp">
+
+<h3>Fade in Tabs</h3>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontent" >
+  <h3>thêm</h3>
+  <p>London is the capital city of England.</p>
+       {$ 1 + 2 $}
+           <form action="" ng-controller = "timCtrl"
+
+              method="post" name="form">
+			  {% csrf_token %}
+              <div class="f_tim">
+                      <label for = "id_ten"> ten </label>
+                       <input type ="text" cols="100" id="id_ten" name ="ten" rows="50" ng-model="congtac.ten"></input>
+                 <span class="btn_tim">
+                       <button class="lb_btn_tim" ng-click="submit($event)"> tim kiem </button>
+                 </span>
+              </div><!-- /input-group -->
+
+           </form>
+
+		<!--ket qua-->
+         {% render_table table_ketqua %}
+        <!--het ket qua-->
+</div> <!-- het them -->
+
+<div id="Paris" class="tabcontent">
+  <h3>tim</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>cap nhat</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+
+
+</body>
+</html>
