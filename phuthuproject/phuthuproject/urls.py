@@ -19,7 +19,8 @@ from apps.myapp.views import index
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
+	url(r'^admin/', include(admin.site.urls)),
 	url(r'^$',index),
 	url(r'^myapp/', include('apps.myapp.urls', namespace='myapp')),
 ]

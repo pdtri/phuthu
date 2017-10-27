@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.myapp',
     'django_tables2',
+    'apps.chuyenthue',
 ]
 
 MIDDLEWARE = [
