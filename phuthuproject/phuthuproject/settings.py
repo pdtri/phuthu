@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'apps.chuyenthue',
     'apps.myapp',
     'django_tables2',
-    'multiselectfield'
+    'multiselectfield',
+    'WeasyPrint',
 
 ]
 
