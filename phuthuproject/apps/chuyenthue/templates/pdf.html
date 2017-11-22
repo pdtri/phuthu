@@ -1,0 +1,46 @@
+<html>
+<body>
+<h1>My Shop</h1>
+<p>
+Invoice no. {{ tpc.id }}</br>
+<span class="secondary">
+{{ tpc.created|date:"M d, Y" }}
+</span>
+</p>
+<h3>Bill to</h3>
+<p>
+{{ tpc.hovaten }} {{ tpc.diachi }}<br>
+{{ tpc.ngaychuyen }}<br>
+{{ tpc.so }}<br>
+{{ tpc.thuadatso }}, {{ tpc.tobando }}
+</p>
+<h3>Items bought</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+{% for item in tpc.items.all %}
+<tr class="row{% cycle "1" "2" %}">
+<td>{{ item.product.name }}</td>
+<td class="num">${{ item.price }}</td>
+<td class="num">{{ item.quantity }}</td>
+<td class="num">${{ item.get_cost }}</td>
+</tr>
+{% endfor %}
+<tr class="total">
+<td colspan="3">Total</td>
+<td class="num">${{ tpc.get_total_cost }}</td>
+</tr>
+</tbody>
+</table>
+<span class="{% if tpc.paid %}paid{% else %}pending{% endif %}">
+{% if tpc.paid %}Paid{% else %}Pending payment{% endif %}
+</span>
+</body>
+</html>

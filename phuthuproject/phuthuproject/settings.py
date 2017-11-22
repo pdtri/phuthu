@@ -36,9 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.chuyenthue',
     'apps.myapp',
     'django_tables2',
-    'apps.chuyenthue',
+    'multiselectfield'
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'phuthuproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,10 +71,7 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'phuthuproject.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 """
@@ -107,13 +106,13 @@ DATABASES = {
         },
 	   'NAME': 'dcvhkkp4pdi7r7',
        'USER': 'cmqvybpzazahyq',
-       'PASSWORD': '',
+       'PASSWORD': 
        'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
        'PORT': '5432',
     }
 }
-
 """
+
 
 DATABASES = {'default': dj_database_url.config()}
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
@@ -139,7 +138,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+#AUTHENTICATION_BACKENDS = (
+    #'auth.authentication.EmailBackend',
+ #   'django.contrib.auth.backends.ModelBackend',
+#)
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -157,7 +159,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'live-static') # chu y load css
+STATIC_ROOT = os.path.join(BASE_DIR,'live-static') # chu y load css djangotable2
 
 STATICFILES_DIRS=(
                   os.path.join(BASE_DIR,'static'),

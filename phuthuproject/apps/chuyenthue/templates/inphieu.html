@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+ <html>
+     <head>
+         <title>Title</title>
+         <meta http-equiv="Content-Type" content="text/html" meta charset=utf-8">
+    	<script language="javascript" src="{% static  "djng/js/angular.min.js" %}"> </script>
+        <script language="javascript" src="{% static  "djng/app_congtac.js" %}"></script>
+     </head>
+     <body>
+      <table>
+        {% regroup data_row by so as so_list %}
+        {% for so in so_list %}
+            {% for s in so.list %}
+                <tr>
+                    <td>VĂN PHÒNG ĐKĐĐ THÀNH PHỐ CẦN THƠ </td>
+                    <td>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </td>
+                </tr>
+                <tr>
+                    <td>CHI NHÁNH VPĐKĐĐ QUẬN CÁI RĂNG  </td>
+                    <td>Độc lập - Tự do - Hạnh phúc</td>
+                </tr>
+                <tr>
+                    <hr class='hrItem' />
+                </tr>
+                <tr>
+                    <td>Số: {{ s.so_in }}</td>
+                    <td>Ngày: {{ s.ngaychuyen }}</td>
+                </tr>
+                <tr>
+                    <td> Kính gửi:</td>
+                    <td> Chi cục thuế quận Cái Răng, thành phố Cần Thơ</td>
+                </tr>
+                <tr>
+                    <td> Chi nhánh Văn phòng ĐKĐĐ Quận Cái Răng thông tin địa chính để xác định nghĩa vụ tài chính như sau:</td>
+                </tr>
+                <tr>
+                   <th>I-NGƯỜI SỬ DỤNG NHÀ ĐẤT: </th>
+
+                </tr>
+                <tr>
+                    <td> {{ s.hovaten }} </td>
+                </tr>
+                <tr>
+                    <td> Địa chỉ để gửi thông báo nộp tiền: {{ s.diachi }} </td>
+                </tr>
+
+                <tr>
+                    <th> II- THÔNG TIN VỀ NHÀ ĐẤT</th>
+                </tr>
+                <tr>
+                    <th> 1.Về thửa đất</th>
+                 </tr>
+                 <tr>
+                    <td>1.1 Thửa đất số: {{ s.thuadatso}}</td>
+                    <td>- Tờ bản đồ số: {{ s.tobando}}</td>
+                </tr>
+                <tr>
+                    <td>1.2 Địa chỉ thửa đất: {{ s.dc_thuadat}}</td>
+                </tr>
+                <tr>
+                    <td>1.3 Loại đường/khu vực: {{ s.loaiduong}}</td>
+                </tr>
+                <tr>
+                    <td>1.4 Vị trí: {{ s.vitri}}</td>
+                </tr>
+                <tr>
+                    <td>1.5 loại đất: {{ s.loaidat}} </td>
+                </tr>
+                <tr>
+                    <td>1.6 Mục đích sử dụng đất:  {{ s.md_sudung}}</td>
+                </tr>
+                <tr>
+                    <td>1.7 Thời hạn sử dụng đất:   {{ s.th_sudung}} </td>
+                </tr>
+                <tr>
+                    <td>a-Ổn định lâu dài: {{ s.od_laudai}} </td>
+                </tr>
+                <tr>
+                    <td>Có thời hạn: từ ngày: {{ s.cth_tungay}} </td>
+                    <td> Đến ngày: {{ s.cth_denngay}} </td>
+                </tr>
+                <tr>
+                    <td>1.8 Diện tích đất để xác định nghĩa vụ tài chính (m2):</td>
+                </tr>
+                <tr>
+                    <td>{{ s.dientich}} </td>
+                </tr>
+                <tr>
+                    <th>* Đất ở tại đô thị</th>
+                </tr>
+                <tr>
+                    <td>-Trong hạn mức công nhận đất ở (nếu có):{{ s.dtnt_trong_hm}}</td>
+                </tr>
+                <tr>
+                    <td>-Trên hạn mức công nhận đất ở (nếu có):{{ s.dtnt_tren_hm}}</td>
+                </tr>
+                <tr>
+                    <td>-Diện tích sử dụng riêng:{{ s.dtdt_sdr}}</td>
+                </tr>
+                <tr>
+                    <td>-Diện tích sử dụng chung:{{ s.dtdt_sdc}}</td>
+                </tr>
+                <tr>
+                    <td>1.9 Nguồn gốc sử dụng đất: {{ s.nguongoc}}</td>
+                </tr>
+                <tr>
+                    <td>1.10 Thời điểm sử dụng đất từ: {{ s.thoidiem_sdd}}</td>
+                </tr>
+                <tr>
+                    <td>1.11 Đối tượng thuộc diện phải nộp tiền sử dụng đất theo trường hợp: </td>
+                </tr>
+                <tr>
+                    <td>a-100% giá đất: {{ s.noptien_100}}</td>
+                </tr>
+                <tr>
+                    <td>b-50% giá đất: {{ s.noptien_50}}</td>
+                </tr>
+                <tr>
+                    <td>c-50% chênh lệch giữa giá hai loại đất: {{ s.noptien_50_clld}}</td>
+                </tr>
+                <tr>
+                    <td>d-Chênh lệch giữa giá 2 loại đất:{{ s.noptien_clld}} </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <th> 2. Về nhà: </th>
+                </tr>
+                <tr>
+                    <td>2.1 Cấp nhà: {{ s.capnha}}</td>
+                </tr>
+                <tr>
+                    <td>2.2 Diện tích sàn nhà (m2 xây dựng): {{ s.dt_sannha}}</td>
+                </tr>
+                <tr>
+                    <td>2.3 Tầng (lầu) đối với nhà chung cư cao tầng: {{ s.sotangnha}}</td>
+                </tr>
+                <tr>
+                    <td>2.4 Nguồn gốc nhà: Tự xây, mua, thừa kế, tặng cho, nhà tình nghĩa: </td>
+                </tr>
+                <tr>
+                    <td>{{ s.nguongocnha}}</td>
+                </tr>
+                <tr>
+                    <td>2.5 Ngày, tháng, năm hoàn công hoặc mua, nhận thừa kế, tặng cho: {{ s.ngay_hoancong}}</td>
+                </tr>
+                <tr>
+                    <th> III-NHỮNG GIẤY TỜ TRONG HỒ SƠ CỦA NGƯỜI SỬ DỤNG ĐẤT THỰC HIỆN NGHĨA VỤ TÀI CHÍNH GỒM:</th>
+                </tr>
+                <tr>
+                    <td>1. Đối tượng thuộc diện không phải nộp hoặc miễn, giảm:</td>
+                </tr>
+                <tr>
+                    <td>1.1 Đơn đề nghị của người sử dụng đất </td>
+                </tr>
+                <tr>
+                    <td>1.2 Xác nhận của các cơ quan liên quan </td>
+                </tr>
+                <tr>
+                    <td>1.3 Tài liệu khác có liên quan (giấy chứng nhận thương binh, giấy phép ưu đãi đầu tư,..</td>
+                </tr>
+                <tr>
+                    <td>{{ s.doituong_kpn}}</td>
+                </tr>
+                <tr>
+                    <th>2.Đối tượng phải bồi thường thiệt hại về đất: </th>
+                </tr>
+                <tr>
+                    <td>2.1 Quyết định của cơ quan có thẩm quyền về chi trả tiền bồi thường về đất</td>
+                </tr>
+                <tr>
+                    <td> 2.2 Chứng từ thành toán tiền bồi thường:</td>
+                </tr>
+                <tr>
+                    <td>{{ s.doitong_btth}}</td>
+                </tr>
+                <tr>
+                    <td>Những thông tin trên đã được thẩm tra xác minh là đúng thực tế và người sử dụng nhà, đất có đủ điều kiện được cấp giấy chứng nhận.</td>
+                </tr>
+                <tr>
+                    <th>GIÁM ĐỐC</th>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+<!-- {{ cot|truncatechars:5 }}-->
+   </body>
+</html>

@@ -1,6 +1,15 @@
+#import cStringIO as StringIO
+#from xhtml2pdf import pisa
+from django.template.loader import get_template
+#from cgi import escape
+import  io
 
-# Create your views here.
-from django.shortcuts import render
+from xhtml2pdf import pisa
+from reportlab.pdfgen import canvas
+from django.conf import	settings
+from django.template.loader	import	render_to_string
+from django.http import	HttpResponse
+ #from	cv.models	import	CV
 # Create your views here.
 from django.shortcuts import render, get_object_or_404
 
@@ -122,3 +131,43 @@ class thu(View):
             return render(request, 'thu.html', {'table_ketqua': dk})
         else:
             HttpResponseRedirect("thu.html")
+
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from .utils import render_to_pdf #created in step 4
+
+"""
+class GeneratePdf(View):
+     def get(self, request, *args, **kwargs):
+        template = get_template('invoice.html')
+        context = {
+              'today': '04/11/2017',
+              'amount': 39.99,
+             'customer_name': 'Cooper Mann',
+             'order_id': 1233434,
+        }
+        html = template.render(context)		
+        return HttpResponse(html)
+		
+"""
+
+class GeneratePdf(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('invoice.html')
+        context = {
+              'today': '04/11/2017',
+              'amount': 39.99,
+             'customer_name': 'Cooper Mann',
+             'order_id': 1233434,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('invoice.html', context )
+        if pdf:
+           return HttpResponse(pdf, content_type='application/pdf')
+        #    filename = "invoice_1.pdf" 
+        #    content = "inline; filename='invoice_1.pdf'" 
+        #    response['Content-Disposition'] = content
+        #   return response			
+        #return HttpResponse(pdf,content_type='application/pdf')
+        return HttpResponse ("not fount")

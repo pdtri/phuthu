@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Phòng TNMT quận Cái Răng </title>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+         <!--link rel="stylesheet" href='css/style.css'type="text/css" /-->
+        
+		<meta http-equiv= "Content-type" content="text/html"; charset="UTF-8">
+        
+    </head>
+    <body>
+            <div class = "wrapper-fluid">
+                <div class="header">
+				    <h1>PHÒNG TÀI NGUYÊN VÀ MÔI TRƯỜNG QUẬN CÁI RĂNG</h1>
+                    <!--
+					<h3>tel:<br /><span>(07103) 846-1354</span></h3>
+                    <p>Đường Phạm Hùng<br />Cái răng, Cần thơ, 910000</p>
+					-->
+				</div>
+				<div class="main_menu">
+                    <ul>
+                        <li>
+						   <a href="">Trang chủ</a>
+						</li>                      
+                        <li>
+						    <a href="">Danh mục</a>
+						    <ul>
+							    <li><a href=""> Danh mục dự án </a></li> 
+								<li><a href=""> Danh mục tổ chức </a></li>	
+							</ul>
+						</li>	 
+                        <li>
+						    <a href="">Quản lý đất đai</a>
+						    <ul>
+							    <li><a href=""> Chuyển thuế </a></li> 
+								<li><a href=""> Tìm phiếu chuyển thuế </a></li> 
+								<li><a href=""> Thông báo chuyển phường </a></li>	
+							</ul> 
+						</li>
+                        <li>
+						    <a href="">Quản lý văn bản</a>
+                            <ul>
+							    <li><a href=""> Nhập văn bản </a></li> 
+								<li><a href=""> Phân công nhiệm vụ </a></li>	
+							</ul>
+						</li>
+                    </ul>
+                    <div class="clear"></div>   
+                </div>
+                    <div class="left">Left</div>
+				    <div class="content">
+					    <div id="content">
+		                    {% block content %}
+		                    {% endblock %}
+	                    </div>
+				    </div>
+				    <div class="right">Rigth</div>
+				    <div class="footer">Footer</div>
+			    
+		    </div>
+    </body>
+</html>

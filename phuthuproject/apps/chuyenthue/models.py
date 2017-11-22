@@ -1,5 +1,5 @@
 from django.db import models
-
+from multiselectfield import MultiSelectField
 # Create your models here.
 class TPc(models.Model):
     #pcid = models.AutoField(primary_key= True)
@@ -43,7 +43,10 @@ class TPc(models.Model):
     doitong_btth = models.CharField(max_length=255, blank=True, null=True)
     nhanvien = models.CharField(max_length=100, blank=True, null=True)
     loaihoso = models.CharField(max_length=255, blank=True, null=True)
-
+    def __unicode__(self):
+        return self.hovaten
+    def __str__(self):
+        return self.hovaten
     class Meta:
         managed = False
         db_table = 't_pc'
