@@ -162,7 +162,7 @@ def to_pdf(modeladmin, request, queryset):
         #response['Content-Disposition'] = 'filename=\"thu.pdf"'.format(1)
         #chuoi= 'D:\hoclamweb\myfolderproject\phuthuproject\static\css\inphieu.css'
         BASE_DIR = os.path.dirname((__file__))
-        chuoi = str(BASE_DIR)+'/STATIC/css/inphieu.css'
+        chuoi = str(BASE_DIR)+'/static/css/inphieu.css'
         weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(chuoi)])
         return response
         #contex = json.dumps(data_row)
