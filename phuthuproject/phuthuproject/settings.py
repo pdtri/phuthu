@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'apps.myapp',
     'django_tables2',
     'multiselectfield',
-    'WeasyPrint',
-
 ]
 
 MIDDLEWARE = [
