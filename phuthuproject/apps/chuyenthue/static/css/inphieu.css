@@ -2,9 +2,107 @@
     font-weight: 200;
     display: inline-block;
 	font-weight: normal;
-    color: blue;
+    color: black;
     font-size: 16px;
     font-family: "times new roman";
+}
+body {
+
+     margin-top: 0px;
+     margin-left: 0px;
+     margin-right: 0px;
+    }
+/*
+table, td, th {
+    border: 1px solid #ddd;
+
+}*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 
 }
 
+th, td {
+    padding: 15px;
+}
+tr {
+   height: 30px;
+}
+#hang1{
+    width:40%;
+    size:5px;
+    align:center;
+    color:black;
+}
+#hang2{
+    width:30%;
+    size:5px;
+    align:center;
+    color:black;
+}
+#coquanchuquan{
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    width:45%;
+
+}
+#quochieu1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    width:55%;
+}
+#coquanbanhanh{
+    font-weight: bold;
+    text-align: center;
+    width:55%;
+}
+#quochieu2{
+    font-weight: bold;
+    font-style: oblique;
+    text-align: left;
+    width:50%;
+}
+#so{
+    text-align: center;
+    width:40%;
+}
+#ngay{
+    font-style: italic;
+    text-align: right;
+    width:60%;
+}
+#tieude{
+    font-weight: bold;
+    text-align: center;
+    width:100%;
+
+}
+#kinhgui {
+     font-style: italic;
+     font-weight: bold;
+     width:25%;
+     text-align: right;
+
+}
+#chicucthue {
+    font-weight: bold;
+    width:75%;
+    font-size: 17px;
+}
+
+#hovaten{
+    text-align: center;
+}
+#giamdoc{
+    text-align: left;
+    width:40%;
+}
+
+#noinhan{
+    text-align: left;
+    width:60%;
+}

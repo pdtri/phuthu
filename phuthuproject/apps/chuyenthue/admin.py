@@ -136,9 +136,9 @@ def to_pdf(modeladmin, request, queryset):
             for  field in fields:
                 value =  getattr(obj, field.name)
                 dict_row[field.verbose_name]=value
-                if isinstance(value, datetime.datetime):
-                    value = value.strftime('%d/%m/%Y')
-                    dict_row[field.verbose_name] =  value
+                #if isinstance(value, datetime.datetime):
+                    #value = value.strftime('%d/%m/%Y')
+                    #dict_row[field.verbose_name] =  value
             data_row.append(dict(dict_row))
 
 
@@ -158,14 +158,16 @@ def to_pdf(modeladmin, request, queryset):
 
         html = render_to_string('inphieu.html', {"data_row": data_row})
         response = HttpResponse(content_type='application/pdf')
+
         #response['Content-Disposition'] = 'filename=\"order_{}.pdf"'.format(order.id)
         #response['Content-Disposition'] = 'filename=\"thu.pdf"'.format(1)
         #chuoi= 'D:\hoclamweb\myfolderproject\phuthuproject\static\css\inphieu.css'
+
         thu = os.path.dirname((__file__))
-        #thu = (os.path.join(thu, 'static'))
         chuoi = str(thu)+'/static/css/inphieu.css'
         weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(chuoi)])
         return response
+
         #contex = json.dumps(data_row)
         #html = template.render(contex)
         #pdf = render_to_pdf('inphieu.html', context)
@@ -175,7 +177,8 @@ def to_pdf(modeladmin, request, queryset):
         #return HttpResponse(pdf, content_type='application/pdf')
         #return render(request,'inphieu.html', {"data_row": data_row}) chay duoc
         #return render_to_response('inphieu.html',{"data_row": data_row})
-export_to_csv.short_description = 'Export to pdf'
+
+to_pdf.short_description = 'In phiếu'
 #from django.core.urlresolvers import reverse
 #def tpc_detail(obj):
 #	return '<a href="{}">View</a>'.format(reverse('orders:admin_tpc_detail', args=[obj.id]))
@@ -185,50 +188,50 @@ def tpc_pdf(obj):
 tpc_pdf.allow_tags = True
 tpc_pdf.short_description = 'PDF bill'
 class TPcAdmin (admin.ModelAdmin):
-    list_display = (
+    list_display = [
         #'tpc_detail',
         'pcid',
         'so',
-        'so_in',
+        'soin',
         'ngaychuyen',
         'hovaten',
         'diachi',
         'thuadatso',
         'tobando',
-        'dc_thuadat',
+        'dcthuadat',
         'loaiduong',
         'hangdat',
         'vitri',
         'loaidat',
-        'md_sudung',
-        'th_sudung',
-        'od_laudai',
-        'cth_tungay',
-        'cth_denngay',
+        'mdsudung',
+        'thsudung',
+        'odlaudai',
+        'cthtungay',
+        'cthdenngay',
         'dientich',
         'dtnt',
-        'dtnt_trong_hm',
-        'dtnt_tren_hm',
+        'dtnttronghm',
+        'dtnttrenhm',
         'dtdt',
-        'dtdt_sdr',
-        'dtdt_sdc',
+        'dtdtsdr',
+        'dtdtsdc',
         'nguongoc',
-        'thoidiem_sdd',
-        'noptien_100',
-        'noptien_50',
-        'noptien_50_clld',
-        'noptien_clld',
+        'thoidiemsdd',
+        'noptien100',
+        'noptien50',
+        'noptien50clld',
+        'noptienclld',
         'capnha',
-        'dt_sannha',
+        'dtsannha',
         'sotangnha',
         'nguongocnha',
-        'ngay_hoancong',
-        'doituong_kpn',
-        'doitong_btth',
+        'ngayhoancong',
+        'doituongkpn',
+        'doitongbtth',
         'nhanvien',
         'loaihoso',
         
-    )
+    ]
 
     """
      for seat in Seat.objects.all():
@@ -262,7 +265,7 @@ class TPcAdmin (admin.ModelAdmin):
 
     get_status.short_description = 'inphieu'
     """
-    list_filter = ( 'ngaychuyen', 'hovaten','dc_thuadat')
+    list_filter = ( 'ngaychuyen', 'hovaten','dcthuadat')
     search_fields = ('ngaychuyen', 'hovaten')
     list_display_links=['ngaychuyen']
     list_editable=['hovaten']
@@ -272,11 +275,13 @@ class TPcAdmin (admin.ModelAdmin):
     date_hierarchy = 'ngaychuyen'
     ordering = ['hovaten', 'ngaychuyen']
 
+    """
     def hovaten(self, obj):
         return obj.get_status_display()
         hovaten.admin_order_field = 'hovaten'
         hovaten.short_description = 'hovaten'
-    actions = [capnhat,khongcapnhat,select_file_action,hovaten,export_to_csv,to_pdf]
+    """
+    actions = [select_file_action,to_pdf]
 admin.site.register(TPc,TPcAdmin)
 #admin.site.register(M, MAdmin,obj)
 admin.site.add_action(export_selected_objects, 'export_selected')
