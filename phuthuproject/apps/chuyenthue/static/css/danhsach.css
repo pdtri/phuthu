@@ -59,7 +59,7 @@ tr {
 }
 #stt{
     text-align: center;
-     width:2px;
+     width:1px;
      border: 1px solid black;
 }
 #hvt{
@@ -75,12 +75,12 @@ tr {
 }
 #s{
     text-align: center;
-    width:58px;
+    width:65px;
     border: 1px solid black;
 }
 #sothutu {
     font-weight: bold;
-    width:2px;
+    width:1px;
     font-size: 17px;
     border: 1px solid black;
     text-align: center;
@@ -101,7 +101,7 @@ tr {
 }
 #soin {
     font-weight: bold;
-    width:58px;
+    width:65px;
     font-size: 17px;
     border: 1px solid black;
     text-align: left;

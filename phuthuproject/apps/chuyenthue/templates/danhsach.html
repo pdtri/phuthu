@@ -43,7 +43,7 @@
                             <td id="s" > <b>Số PC </b></td>
                         </tr>
                 </table>
-{% regroup data_row by so as so_list %}
+{% regroup data_row by ngaychuyen as so_list %}
              {% for so in so_list %}
 
             {% with forloop.counter as stt %}
