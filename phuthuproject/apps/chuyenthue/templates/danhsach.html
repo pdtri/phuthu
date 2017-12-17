@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+ <html>
+     <head>
+         <title> Danh sách phiếu chuyển</title>
+         <meta http-equiv="Content-Type" content="text/html" meta charset=utf-8">
+    	<script language="javascript" src="{% static  "djng/js/angular.min.js" %}"> </script>
+        <script language="javascript" src="{% static  "djng/app_congtac.js" %}"></script>
+     </head>
+     <body>
+
+
+               <table class="qh-td">
+                        <tr>
+                            <td id="quochieu1">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </td>
+                        </tr>
+                </table>
+                <table class="qh-td">
+                        <tr>
+                            <td id="quochieu2">
+                                <u>Độc lập - Tự do - Hạnh phúc </u>
+                            </td>
+                        </tr>
+                </table>
+
+                <table class="qh-td">
+                        <tr>
+                            <td id="tieude">
+                                <br>DANH SÁCH PHIẾU CHUYỂN THÔNG TIN  <br> ĐỊA CHÍNH ĐỂ XÁC ĐỊNH NGHĨA VỤ TÀI CHÍNH
+                                <hr id="hang2">
+                                <br>
+                            </td>
+
+                        </tr>
+                </table>
+                <table class="bang">
+                        <tr>
+                            <td id="stt" ><b>STT</b> </td>
+                            <td id="hvt"  ><b>Họ và tên</b> </td>
+                            <td id="dc"  > <b>Địa chỉ đất</b></td>
+                            <td id="s" > <b>Số PC </b></td>
+                        </tr>
+                </table>
+{% regroup data_row by so as so_list %}
+             {% for so in so_list %}
+
+            {% with forloop.counter as stt %}
+               {% for s in so.list %}
+
+                <table class="bang">
+                        <tr>
+                            <td id="sothutu" ><b style="color: blue;"> {{ stt }}</b></td>
+                            <td id="hovaten" style="color:blue; "> <b>{% if not s.hovaten is null %} {{ s.hovaten }} {% endif %} </b> </td>
+                            <td id="diachi" ><b style="color: blue;">{% if not s.dcthuadat is null %} {{ s.dcthuadat }} {% endif %} </b></td>
+                            <td id="soin" ><b style="color: blue;">{% if not s.soin is null %} {{ s.soin }} {% endif %} </b></td>
+
+                        </tr>
+                </table>
+
+              {% endfor %}
+            {% endwith %}
+        {% endfor %}
+         <br>
+         <table>
+                        <tr>
+                            <td id="ngay" ><b> Cái Răng, ngày {% now "d" %} tháng {% now "m" %} năm {% now "Y" %} </b></td>
+                        </tr>
+
+         </table>
+
+         <table>
+                        <tr>
+                            <td id="nguoigiao" ><b>Người giao</b></td>
+                            <td id="nguoinhan"><b>Người nhận</b></td>
+                        </tr>
+         </table>
+
+   </body>
+
+</html>

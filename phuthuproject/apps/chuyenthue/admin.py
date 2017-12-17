@@ -16,6 +16,7 @@ import weasyprint
 from django.conf.urls.static import static
 import json
 import os
+import datetime
 #from django.http import HttpResponse
 
 # Register your models here.
@@ -178,7 +179,28 @@ def to_pdf(modeladmin, request, queryset):
         #return render(request,'inphieu.html', {"data_row": data_row}) chay duoc
         #return render_to_response('inphieu.html',{"data_row": data_row})
 
+
+def to_danhsach(modeladmin, request, queryset):
+    opts = modeladmin.model._meta
+    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]
+    data_row = []
+    for obj in queryset:
+        dict_row = {}
+        for field in fields:
+            value = getattr(obj, field.name)
+            dict_row[field.verbose_name] = value
+        data_row.append(dict(dict_row))
+    html = render_to_string('danhsach.html', {"data_row": data_row})
+    response = HttpResponse(content_type='application/pdf')
+    thu = os.path.dirname((__file__))
+    chuoi = str(thu) + '/static/css/danhsach.css'
+    weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(chuoi)])
+    return response
+
+    # return render_to_response('danhsach.html',{"data_row": data_row})
+
 to_pdf.short_description = 'In phiếu'
+to_danhsach.short_description = 'In danh sách'
 #from django.core.urlresolvers import reverse
 #def tpc_detail(obj):
 #	return '<a href="{}">View</a>'.format(reverse('orders:admin_tpc_detail', args=[obj.id]))
@@ -281,7 +303,7 @@ class TPcAdmin (admin.ModelAdmin):
         hovaten.admin_order_field = 'hovaten'
         hovaten.short_description = 'hovaten'
     """
-    actions = [select_file_action,to_pdf]
+    actions = [select_file_action,to_pdf,to_danhsach]
 admin.site.register(TPc,TPcAdmin)
 #admin.site.register(M, MAdmin,obj)
 admin.site.add_action(export_selected_objects, 'export_selected')

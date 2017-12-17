@@ -90,13 +90,11 @@ DATABASES = {
         },
 	   'NAME': 'qldd',
        'USER': 'postgres',
-       'PASSWORD': 'l430',
+       'PASSWORD': 'l',
        'HOST': '127.0.0.1',
        'PORT': '5432',
     }
 }
-
-
 """
 """
 DATABASES = {
@@ -107,7 +105,7 @@ DATABASES = {
         },
 	   'NAME': 'dcvhkkp4pdi7r7',
        'USER': 'cmqvybpzazahyq',
-       'PASSWORD': 
+       'PASSWORD':
        'HOST': 'ec2-107-21-109-15.compute-1.amazonaws.com',
        'PORT': '5432',
     }

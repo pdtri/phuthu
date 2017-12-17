@@ -1,0 +1,125 @@
+ html {
+    font-weight: 200;
+    display: inline-block;
+	font-weight: normal;
+    color: black;
+    font-size: 16px;
+    font-family: "times new roman";
+}
+body {
+
+     margin-top: 0px;
+     margin-left: 0px;
+     margin-right: 0px;
+    }
+.QH-TD {
+
+}
+/*
+table, td, th {
+    border: 1px solid #ddd;
+
+}
+*/
+.bang,th{
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 15px;
+}
+tr {
+   height: 30px;
+}
+#quochieu1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    width:55%;
+}
+#quochieu2{
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    width:50%;
+}
+#tieude{
+    font-weight: bold;
+    text-align: center;
+    width:100%;
+}
+#hang2{
+    width:30%;
+    size:5px;
+    align:center;
+    color:black;
+}
+#stt{
+    text-align: center;
+     width:2px;
+     border: 1px solid black;
+}
+#hvt{
+    text-align: center;
+    width:150px;
+    border: 1px solid black;
+}
+
+#dc{
+    text-align: center;
+    width:230px;
+    border: 1px solid black;
+}
+#s{
+    text-align: center;
+    width:58px;
+    border: 1px solid black;
+}
+#sothutu {
+    font-weight: bold;
+    width:2px;
+    font-size: 17px;
+    border: 1px solid black;
+    text-align: center;
+}
+#hovaten {
+    font-weight: bold;
+    width:150px;
+    font-size: 17px;
+    border: 1px solid black;
+    text-align: left;
+}
+#diachi {
+    font-weight: bold;
+    width:230px;
+    font-size: 17px;
+    border: 1px solid black;
+    text-align: left;
+}
+#soin {
+    font-weight: bold;
+    width:58px;
+    font-size: 17px;
+    border: 1px solid black;
+    text-align: left;
+}
+#ngay{
+    font-style: bold;
+    text-align: left;
+    width:100%;
+    padding-left:3.0em
+}
+
+#nguoigiao {
+    font-style: bold;
+    text-align: center;
+    width:50%;
+}
+#nguoinhan {
+    font-style: bold;
+    text-align: center;
+    width:50%;
+}
